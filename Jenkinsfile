@@ -13,12 +13,15 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh 'mvn test' 
+                sh '''
+                mvn test
+                cp -r app/build/surefire-reports $WORKSPACE/surefire-reports
+                ''' 
             }
             post {
                 always {
                     
-                    junit '**/build/test-reports/*.xml'
+                    junit '**target/surefire-reports/*.xml'
  
                 }
             }
