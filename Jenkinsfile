@@ -17,6 +17,7 @@ pipeline {
             }
             post {
                 always {
+                    cp -r app/build/test-results $WORKSPACE/test-results
                     junit '**target/surefire-reports/*.xml'
  
                 }
