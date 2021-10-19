@@ -8,10 +8,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh '''
-                mvn -B -DskipTests clean package
-                cp -r app/build/test-results $WORKSPACE/test-results
-                '''
+                sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test') { 
