@@ -15,7 +15,7 @@ pipeline {
             steps {
                 sh '''
                 mvn test
-                cp -r app/build/surefire-reports $WORKSPACE/surefire-reports
+                ls
                 ''' 
             }
             post {
