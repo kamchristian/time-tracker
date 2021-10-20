@@ -21,6 +21,9 @@ pipeline {
             post {
                 always {
                     junit allowEmptyResults: true, testResults: '**/surefire-reports/*.xml'
+                    // warning Next generation pluging
+                    recordIssues enabledForFailure: true, aggregatingResults: true, tool: checkStyle(pattern: 'checkstyle-result.xml')
+
 
                     ///junit 'target/surefire-reports/*.xml'
                 }
