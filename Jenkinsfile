@@ -6,9 +6,7 @@ pipeline {
         }
     }
     //for deliver maven
-    options {
-        skipStagesAfterUnstable()
-    }
+   
     stages {
         stage('Build') {
             steps {
@@ -28,10 +26,6 @@ pipeline {
             }
         }
         //for deliver maven
-        stage('Deliver') { 
-            steps {
-                sh './jenkins/scripts/deliver.sh' 
-            }
-    }
+   
 }
-}
+
