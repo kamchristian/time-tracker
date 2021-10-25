@@ -1,10 +1,5 @@
 pipeline {
-   agent {
-         docker {
-            image 'sonarqube:8.9-community'
-         }
-         
-     }
+   agent any
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
