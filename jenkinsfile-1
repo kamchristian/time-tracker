@@ -7,7 +7,7 @@ pipeline {
             }
             steps {
                 sh 'mvn --version'
-                sh' clean'
+                sh 'mvn clean'
             }
         }
         stage('Front-end') {
